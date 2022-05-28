@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ValentinaPalacio</title>
+  <link rel="stylesheet" href="./css/bulma.min.css">
+  <link rel="stylesheet" href="./css/material-design-iconic-font.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+
+<body>
+  <nav class="navbar">
+    <!-- Nabvar header -->
+    <header class="navbar-header" id="navbar-header">
+      <a href="#" class="brand-link is-size-3">
+        <i class="zmdi zmdi-camera icono"></i>
+        <span class="brand anto">Valentina Palacio</span>
+      </a>
+      <button class="navbar-menu-mobile open is-size-3 is-hidden-desktop" id="navbar-menu-mobile">
+        <i class="zmdi zmdi-menu"></i>
+      </button>
+    </header>
+    <!-- Navbar container -->
+      <ul class="navbar-container" id="navbar-container">
+        <li class="navbar-item">
+          <a data-scroll href="#top" id="inicio" class="navbar-a navbar-link-active">Inicio</a>
+        </li>
+        <li class="navbar-item">
+          <a data-scroll href="#about" id="acercaDe" class="navbar-a">Acerca de mí</a>
+        </li>
+        <li class="navbar-item">
+          <a data-scroll href="#section2" id="section" class="navbar-a">Contenido exlusivo</a>
+        </li>
+        <li class="navbar-item">
+          <a data-scroll href="#gallery" id="photos" class="navbar-a">Mis fotos</a>
+        </li>
+        <li class="navbar-item">
+          <a data-scroll href="#contacto" id="form" class="navbar-a">Suscribirse</a>
+        </li>
+      </ul>
+  </nav>
+  <!-- Sección del carrusel -->
+  <div class="section-body" id="top">
+  <div class="slide-contenedor" >
+    <% banner.forEach(photo => { %>
+      <div class="miSlider fade">
+          <div class="slider-body">
+              <h2 class="is-size-3-mobile has-text-weight-bold slider-title"><%=photo.estado%></h2>
+            </div>
+          <img src="<%=photo.imageURL%>" alt="">
+      </div>
+      <div class="direcciones">
+          <a href="#" class="atras" onclick="avanzaSlide(-1)">&#10094;</a>
+          <a href="#" class="adelante" onclick="avanzaSlide(1)">&#10095;</a>
+      </div>
+      <div class="dots">
+          <span class="dot active" onclick="posicionSlide(1)"></span>
+          <span class="dot" onclick="posicionSlide(2)"></span>
+          <span class="dot" onclick="posicionSlide(3)"></span>
+      </div>
+    <% }); %>
+  </div>
+  <span>
+    <a href="https://api.whatsapp.com/send?phone=59895195047&text=Acabo de ver tu Web, me gustaria contactarme con tigo."><img id="whatsapp" src="../pics/w.png" alt="whatsapp"></a>
+    <a data-scroll href="#contacto" id="form" class="navbar-a butt c sus">SUSCRIBETE</a>
+  </span>
+   <!-- About me -->
+  <div class="container" id="about">
+    <div class="columns is-vcentered">
+      <div class="column is-half">
+        <div class="about-me">
+          <figure class="image">
+            <img class="about-me-img" src="../pics/pic02.jpeg" alt="">
+          </figure>
+        </div>
+      </div>
+      <div class="column is-half section-about-me">
+        <h1 class="title is-size-3-mobile is-size-2-tablet has-text-weight">Acerca de mí</h1>
+        <h5 class="subtitle is-size-6-mobile is-size-5-tablet separator">Acompañante V I P ⭐⭐⭐⭐⭐ </h5>
+        <p class="text is-size-7-mobile">Servicio tranquilo sin apuros, higiene, buena onda y energia. Soy elegante y educada con mucha experiencia para que te dejes llevar 
+          por una experiencia inolvidable.
+        </p>
+        <p class="text is-size-7-mobile">
+          Excelente ubicacion con lugar para estacionar, total discrecion y respeto. Viajo al extranjero y al interior del pais.
+          Cumplo tus fantasias , atiendo parejas y Caballeros de alto nivel.
+        </p>
+      </div>
+    </div>
+  </div>
+<!-- Contenideo exclusivo  -->
+  <div id="section2" class="hero my-hero" style="--bg-atachment: none;" >
+    <div class="container-hero">
+      <div class="container">
+        <div class="columns is-multiline">
+          <div class="column is-full has-text-centered">
+            <h1 class="title has-text-white is-size-3-mobile is-size-1-tablet anto">
+              Contenido exclusivo
+            </h1>
+            <h5 class="subtitle is-size-5">
+            100% Hot !
+            </h5>
+            <a data-scroll href="#contacto" id="form" class="navbar-a butt c">Suscribete para acceder al contenido</a>
+          </div>
+          <div class="column">
+            <div class="banner-container">
+              <span class="container-icon">
+               <i class="zmdi zmdi-camera-monochrome-photos zmdi-hc-2x icono cam"></i>
+              </span>
+              <h4 class="is-size-5 has-text-centered has-text-weight-bold">Fotos explicitas</h4>
+              <p class="has-text-centered is-size-7-mobile">El mejor contenido XXX sin restricciones</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="banner-container">
+              <span class="container-icon">
+               <i class="zmdi zmdi-videocam zmdi-hc-2x icono"></i>
+              </span>
+              <h4 class="is-size-5 has-text-centered has-text-weight-bold">Mejores Videos Xxx</h4>
+              <p class="has-text-centered is-size-7-mobile">Galeria de videos sexuales explicitos sin sensura 100% reales.</p>
+            </div>    
+          </div>
+          <form class="login" action="/login" method="post" >
+            <input required="true" name="email" class="input" type="text" placeholder="email">
+            <input required="true" name="password" class="input" type="password" placeholder="password">
+            <button class="tag-slider boton b">I N G R E S A R</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Galería -->
+  <div class="container" id="gallery">
+    <div class="columns is-multiline">
+      <div class="column has-text-centered is-full">
+        <h1 class="title is-size-3-mobile is-size-1-tablet has-text-weight anto">Mis fotos</h1>
+        <h5 class="subtitle is-size-6">100% reales verificadas</h5>
+      </div>
+      <div class="column">
+        <div class="gallery-container" id="gallery-container">
+         <% photoHome.forEach(photo => { %>
+          <div class="gallery-item">
+            <figure class="image"> 
+              <img class="gallery-img" src="<%=photo.imageURL%>" alt="">
+            </figure>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Suscribirse -->
+  <div class="container" id="contacto">
+    <div class="columns is-multiline">
+      <div class="column has-text-centered is-full">
+        <h1 class="title is-size-3-mobile is-size-1-tablet has-text-weight anto">SUSCRIBETE</h1>
+        <h5 class="subtitle is-size-6">Para acceder a contenido exclusivo</h5>
+        <p class="a">todas las suscripciones son validas por 30 dias</p>
+      </div>
+      <div class="column">
+        <form action="/pago" method="post">
+          <div class="columns is-multiline">
+            <div class="column is-half">
+              <div class="field">
+                <label class="label">Nombre</label>
+                <div class="control">
+                  <input required="true" name="name" class="is-radiusless is-shadowless input is-medium" type="text" placeholder="Nombre">
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <labe class="label">Email<label>
+                    <input required="true" name="email" class="is-radiusless is-shadowless input is-medium" type="email"
+                      placeholder="email">
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <div class="control">
+                  <label class="label">Contraseña</label>
+                  <input required="true" name="password" class="is-radiusless is-shadowless input is-medium" type="password"
+                    placeholder="Contraseña">
+                </div>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <input class="tag-slider boton" type="submit" value="S U S C R I B I R S E">  
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="my-footer">
+    <div class="hero my-hero" style="--banner: url(./pics/08.jpg); --bg-atachment: none;">
+      <div class="container-hero">
+  <!--contenedor de los comentarios-->
+        <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://antonella-coments.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <div class="columns is-multiline">
+          <div class="column is-full has-text-centered">
+            <span class="has-text-white">
+              <i class="is-size-3-mobile is-size-1 zmdi zmdi-camera icono"></i>
+            </span>
+          </div>
+          <div class="column has-text-centered is-size-7-mobile  is-full">
+            <p class="footer-p has-text-white">© 2022 ValentinaXxx.uy Todos los derechos reservados</p> <br>
+            <p class="footer-p has-text-white" >desarrollador AV (+598)092222501 </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+  <script src="../js/smooth-scroll.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

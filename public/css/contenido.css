@@ -1,0 +1,34 @@
+section{
+    height: 50rem;
+    background-image: url(../pics/fondo.jpg);
+    background-size: cover;
+    text-align: center;
+    color: white;
+    
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+body{
+    margin: 0 !important;
+}
+
+.tag-slider {
+    background: #EDCF8E;
+    border: none;
+    color: var(--white);
+    padding: 0.5rem;
+    display: inline-block; }
+  
+    .boton{
+      width: 80%;
+      margin-top: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #EDCF8E, 0 0 25px #EDCF8E, 0 0 50px #EDCF8E,
+    0 0 200px #EDCF8E;
+    }
+
+    input{
+        width: 80%;
+        margin-top: 5px;
+    }
