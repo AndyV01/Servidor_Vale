@@ -23,7 +23,7 @@ router.post("/", async function (req, res) {
             password: usuarioObj.password,
             email: usuarioObj.email,
         }
-        const token = jwt.sign(payload, secret, { expiresIn: '10h' })
+        const token = jwt.sign(payload, process.env.SECRET, { expiresIn: '10h' })
         res.cookie("token", token, { httpOnly: true })   
         res.redirect("/galeria")
     }
