@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize")
 
 
-const sequelize = new Sequelize( {
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
     database: process.env.PGDATABASE,
     username: process.env.PGUSER,
     password: process.env.PGPASSWORD,
