@@ -330,7 +330,7 @@ form {
      }
   .navbar-menu-mobile {
     color: var(--danger);
-    border: 1px solid var(--white);
+    border: none;
     display: flex;
     justify-content: center;
     padding: 0.33333rem;
@@ -449,6 +449,7 @@ form {
       background: #eb7790;
       font-size: 0.8rem;
       padding: 10px;
+      
     }
     
     @keyframes flash {
@@ -611,6 +612,13 @@ form {
   border: none;
   border-radius: 5px !important;
   color: rgb(255, 255, 255);
+}
+#log2{
+  background: rgba(255, 255, 255, 0.4);
+  margin-bottom: 8px;
+  border: none;
+  border-radius: 5px !important;
+  color: rgb(70, 70, 70);
 }
 @media (min-width: 973px) {
   .container-hero {
