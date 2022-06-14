@@ -42,7 +42,7 @@
         </li>
       </ul>
   </nav>
-  <!-- Sección del carrusel -->
+  <!-- Sección del carrusel Banner  -->
   <div class="section-body" id="top">
   <div class="slide-contenedor" >
     <% banner.forEach(photo => { %>
@@ -230,6 +230,17 @@
     </div>
   </footer>
 </div>
+  <script>
+    function myFunction(){
+    const boton = document.getElementById('navbar-menu-mobile');
+    const nav = document.getElementById('navbar-container');
+    boton.addEventListener('click',()=>{
+        nav.classList.toggle('show')
+    }
+    )
+}
+myFunction();
+  </script>
   <script src="../js/smooth-scroll.min.js"></script>
   <script src="../js/main.js"></script>
 </body>
